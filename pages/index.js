@@ -4,12 +4,13 @@ import Box from '../src/Box'
 export default function Home() {
     return (
         <div >
-            <Head>
+            <Head>~
                 <title>CheeseHacks Project</title>
                 <link rel="icon" href="/random.ico"/>
             </Head>
             <main>
                 <h1>Hello world</h1>
+                <Box/>
             </main>
         </div>
     )
