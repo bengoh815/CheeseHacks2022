@@ -1,3 +1,3 @@
 # CheeseHacks2022
 
-For CheeseHack competition @ UW Wisconsin
+For [CheeseHack](https://cheesehacks.webdevuw.org/) competition @ UW Wisconsin
