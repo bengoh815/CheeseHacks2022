@@ -2,4 +2,4 @@
 
 For [CheeseHack](https://cheesehacks.webdevuw.org/) competition @ UW Wisconsin
 
-Website: https://cheese-hacks2022.vercel.app/
+Website link: https://cheese-hacks2022.vercel.app/
