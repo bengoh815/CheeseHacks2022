@@ -39,7 +39,7 @@ export default class MainBox extends React.Component {
         return (
             <div>
                 <h1>
-                    Cross Listed Subject Searcher: 
+                    L&S Cross Listed Course Searcher: 
                 </h1>
                 <form onSubmit={this.handleSubmit}>
                     <br></br>
