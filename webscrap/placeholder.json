@@ -13,7 +13,7 @@
             {
                 "courseSubject": "COMPSCI",
                 "courseCode": "271",
-                "courseName": "Some wierd ass name",
+                "courseName": "Some name",
                 "description": "Some description",
                 "requisites:": "COMPSCI 200 ...",
                 "credits": 3
@@ -34,7 +34,7 @@
             {
                 "courseSubject": "COMPSCI",
                 "courseCode": "271",
-                "courseName": "Some wierd ass name",
+                "courseName": "Some name",
                 "description": "Some description",
                 "requisites:": "COMPSCI 200 ...",
                 "credits": 3

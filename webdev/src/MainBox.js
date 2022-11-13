@@ -16,13 +16,8 @@ export default class MainBox extends React.Component {
         const firstArray = this.state.major1 in data ? data[this.state.major1]["courses"] : [];
         const secondArray = this.state.major2 in data ? data[this.state.major2]["courses"] : [];
 
-        if (firstArray === undefined || firstArray.length == 0 ||
-            secondArray === undefined || secondArray.length == 0) {
-                // do nothing
-        } else {
-            var sol = firstArray.filter(o => secondArray.some(({courseSubject, courseCode, courseName, description, requisites, credits}) => o.courseName === courseName ));
-            this.setState({output: sol});
-        }
+        var sol = firstArray.filter(o => secondArray.some(({courseSubject, courseCode, courseName, description, requisites, credits}) => o.courseName === courseName ));
+        this.setState({output: sol});
     }
 
     handleChangeMaj1 = (event) => {
