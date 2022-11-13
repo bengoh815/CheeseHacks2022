@@ -34,7 +34,7 @@
             {
                 "courseSubject": "COMPSCI",
                 "courseCode": "271",
-                "courseName": "Some  ass name",
+                "courseName": "Some wierd ass name",
                 "description": "Some description",
                 "requisites:": "COMPSCI 200 ...",
                 "credits": 3
