@@ -22,12 +22,16 @@ export default function SearchBox(props) {
 
     return (
         <div>
-            <form className={styles} onSubmit={handleSub}>
-            <label>Major 1: </label>
-            <input type = "text" placeholder = "ie Math" value={maj1} onChange={handleChangeMaj1} required></input>
-            <label>Major 2: </label>
-            <input type = "text" placeholder = "ie. Computer Science" value={maj2} onChange={handleChangeMaj2} required></input>
-            <button type="submit">Cross list!</button>
+            <form onSubmit={handleSub}>
+            <br></br>
+            <label className="labelText">Major 1: </label>
+            <input type = "text" placeholder = "ie Math" value={maj1} onChange={handleChangeMaj1} required className='box'></input>
+            <br></br>
+            <br></br>
+            <br></br>
+            <label className="labelText">Major 2: </label>
+            <input type = "text" placeholder = "ie. Computer Science" value={maj2} onChange={handleChangeMaj2} required className='box'></input>
+            <button type="submit" className="button">Cross list!</button>
         </form>
         </div>
     );
