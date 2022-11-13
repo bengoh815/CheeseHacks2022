@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import styles from "../styles/SearchBox.module.css";
+import data from "../../webscrap/placeholder.json"
 
 export default function SearchBox(props) {
     const [maj1, setMaj1] = useState('');
@@ -14,8 +15,7 @@ export default function SearchBox(props) {
     }
 
     const handleSub = (event) => {
-        props.onCrossList1(maj1);
-        props.onCrossList2(maj2);
+        props.onCrossList(maj1, maj2);
         event.preventDefault();
     }
 
