@@ -1,0 +1,44 @@
+{
+    "Computer Science": {
+        "major name": "Computer Science",
+        "courses": [
+            {
+                "course subject": "COMPSCI",
+                "course code": "577",
+                "course name": "Introduction to Algorithms",
+                "description": "Some description",
+                "requesites:": "COMPSCI 400 ...",
+                "credits": 3
+            },
+            {
+                "course subject": "COMPSCI",
+                "course code": "271",
+                "course name": "Some wierd ass name",
+                "description": "Some description",
+                "requesites:": "COMPSCI 200 ...",
+                "credits": 3
+            }
+        ]
+    }, 
+    "Math": {
+        "major name": "Math",
+        "courses": [
+            {
+                "course subject": "COMPSCI",
+                "course code": "577",
+                "course name": "Introduction to Algorithms",
+                "description": "Some description",
+                "requesites:": "COMPSCI 400 ...",
+                "credits": 3
+            },
+            {
+                "course subject": "COMPSCI",
+                "course code": "271",
+                "course name": "Some wierd ass name",
+                "description": "Some description",
+                "requesites:": "COMPSCI 200 ...",
+                "credits": 3
+            }
+        ]
+    }
+}

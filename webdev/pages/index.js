@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Box from '../src/Box'
+import MainBox from '../src/MainBox'
 import NavBar from '../src/navBar/NavBar'
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
             </Head>
             <NavBar/>
             <main>
-                <Box/>
+                <MainBox/>
             </main>
         </div>
     )
