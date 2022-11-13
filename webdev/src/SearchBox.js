@@ -5,17 +5,32 @@ import data from "../../webscrap/placeholder.json"
 export default function SearchBox(props) {
     const [maj1, setMaj1] = useState('');
     const [maj2, setMaj2] = useState('');
+    const [majArr1, setMajArr1] = useState([]);
+    const [majArr2, setMajArr2] = useState([]);
+    const [result, setResult] = useState([]);
+
 
     const handleChangeMaj1 = (event) => {
         setMaj1(event.target.value);
+        setMajArr1(maj1 in data ? data[maj1]["courses"] : []);
     }
 
     const handleChangeMaj2 = (event) => {
         setMaj2(event.target.value);
+        setMajArr2(maj2 in data ? data[maj2]["courses"] : []);
+        if (maj2 in data) {
+            findCrossList();
+        }
+    }
+
+    const findCrossList = () => {
+        var sol = majArr1.filter(o => majArr2.some(({courseSubject, courseCode, courseName, description, requisites, credits}) => o.courseName === courseName ));
+        setResult(sol);
     }
 
     const handleSub = (event) => {
-        props.onCrossList(maj1, maj2);
+        props.onCrossList(maj1, maj2, result);
+        console.log("clicked");
         event.preventDefault();
     }
 
