@@ -30,6 +30,10 @@
     min-height: calc(100vh - 60px);
     background-color: #f1f1f1;
   }
+  .nav__menuList:hover{
+    background: lightblue;
+  }
+
   .nav__menu-list.active{
     right: 0;
   }
