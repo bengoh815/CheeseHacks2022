@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import SearchBox from "./SearchBox";
+import React from "react";
 import OutputBox from "./OutputBox";
+import data from "../../webscrap/placeholder.json"
 
 export default class MainBox extends React.Component {
     constructor(props) {
@@ -8,23 +8,32 @@ export default class MainBox extends React.Component {
         this.state = {
             major1: '',
             major2: '',
-            output: '',
+            output: [],
         };
     }
 
-    handleSubmit1 = (value) => {
-        this.setState({major1: value});
+    checkCrossList = () => {
+        const firstArray = this.state.major1 in data ? data[this.state.major1]["courses"] : [];
+        const secondArray = this.state.major2 in data ? data[this.state.major2]["courses"] : [];
+
+        var sol = firstArray.filter(o => secondArray.some(({courseSubject, courseCode, courseName, description, requisites, credits}) => o.courseName === courseName ));
+        this.setState({output: sol});
     }
 
-    handleSubmit2 = (value) => {
-        this.setState({major2: value});
-        this.findCrossList();
+    handleChangeMaj1 = (event) => {
+        this.setState({major1: event.target.value});
     }
 
-    findCrossList() {
-
-        this.setState({output: "smtg"})
+    handleChangeMaj2 = (event) => {
+        this.setState({major2: event.target.value});
+        this.checkCrossList();
     }
+
+    handleSubmit = (event) => {
+        this.checkCrossList();
+        event.preventDefault();
+    }
+
 
     render () {
         return (
@@ -32,10 +41,17 @@ export default class MainBox extends React.Component {
                 <h1>
                     Cross Listed Subject Searcher: 
                 </h1>
-                <SearchBox 
-                    onCrossList1={this.handleSubmit1}
-                    onCrossList2={this.handleSubmit2}
-                />
+                <form onSubmit={this.handleSubmit}>
+                    <br></br>
+                    <label className="labelText">Major 1: </label>
+                    <input type = "text" placeholder = "ie. Math" value={this.state.major1} onChange={this.handleChangeMaj1} required className='box'></input>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <label className="labelText">Major 2: </label>
+                    <input type = "text" placeholder = "ie. Computer Science" value={this.state.major2} onChange={this.handleChangeMaj2} required className='box'></input>
+                    <button type="submit" className="button">Cross list!</button>
+                </form>
     
                 <OutputBox text={this.state.output}/>
             </div>

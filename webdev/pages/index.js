@@ -4,12 +4,11 @@ import NavBar from '../src/navBar/NavBar'
 
 export default function Home() {
     return (
-        <div >
+        <div>
             <Head>
                 <title>CheeseHacks Project</title>
                 <link rel="icon" href="/random.ico"/>
             </Head>
-            <NavBar/>
             <main>
                 <MainBox/>
             </main>
