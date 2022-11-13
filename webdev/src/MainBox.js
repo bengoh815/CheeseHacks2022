@@ -8,6 +8,7 @@ export default class MainBox extends React.Component {
         this.state = {
             major1: '',
             major2: '',
+            output: '',
         };
     }
 
@@ -17,6 +18,12 @@ export default class MainBox extends React.Component {
 
     handleSubmit2 = (value) => {
         this.setState({major2: value});
+        this.findCrossList();
+    }
+
+    findCrossList() {
+
+        this.setState({output: "smtg"})
     }
 
     render () {
@@ -30,7 +37,7 @@ export default class MainBox extends React.Component {
                     onCrossList2={this.handleSubmit2}
                 />
     
-                <OutputBox text={this.state.major1}/>
+                <OutputBox text={this.state.output}/>
             </div>
         );
     }
