@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import React, { useState } from "react";
 import NavItem from "./NavItem";
 import styles from "../../styles/NavBar.module.css";
@@ -16,7 +17,12 @@ const NavBar = () => {
         <header>
             <nav className={styles.nav}>
                 <Link href={"/"}>
-                    <h1 className="logo">Insert Logo</h1>
+                    <Image
+                        src="/logo.png"
+                        alt="Logo picture"
+                        width={100}
+                        height={100}
+                    />
                 </Link>
                 <div
                     onClick={() => setNavActive(!navActive)}
