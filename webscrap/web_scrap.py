@@ -52,20 +52,21 @@ def get_courses(major, url):
     f = open('courseList.json', 'w').close() # To clear the file that could have old data 
     stringOutput = "{\n    \""+major+"\": {\n       \"majorName\": \"" + major + "\",\n       \"courses\": [\n          "
     #print(stringOutput)
- 
-    for x in table:
-        courseCode = x.find_all(["a"], class_="bubblelink code")
-        for y in courseCode:
-            x = y.parent.next_sibling
-
-            print(y.string)
-                    #print(y.string.strip()) #TODO: put this output in a JSON file instead 
-                    #f.write(y.string.strip())
-            y = y.string.strip()
-                    #print(y[:-3])
-    stringOutput = stringOutput + "\n           {\n                 \"courseSubject\": \""+y[:-3].strip()+"\",\n                "+"\"courseCode\": \""+y[-3:].strip() + "\",\n              \"courseName\": \"" + "course name" + "\""
-    #with open('courseList.txt', 'a') as f:
-    print(stringOutput)
+    with open('courseList.txt', 'a') as f:
+        for x in table:
+            courseCode = x.find_all(["a"], class_="bubblelink code")
+            for y in courseCode:
+                # x = y.parent.next_sibling
+                f.write(y.string)
+                f.write("\n")
+                        #print(y.string.strip()) #TODO: put this output in a JSON file instead 
+                        #f.write(y.string.strip())
+                
+                        #print(y[:-3])
+        # Code to put them all in a JSON file 
+        #stringOutput = stringOutput + "\n           {\n                 \"courseSubject\": \""+y[:-3].strip()+"\",\n                "+"\"courseCode\": \""+y[-3:].strip() + "\",\n              \"courseName\": \"" + "course name" + "\""
+        #with open('courseList.txt', 'a') as f:
+        #print(stringOutput)
 
     # toJSON(courseTitle, major)
 
