@@ -5,7 +5,7 @@ export default function OutputBox(props) {
         <div className={styles.box}>
             <ul>
                 {props.text.map(function(d, idx){
-                    return (<li key={idx}>{d.courseName}</li>)
+                    return (<li key={idx}>{d.courseSubject} {d.courseCode} {d.courseName}</li>)
                 })}
             </ul>
         </div>

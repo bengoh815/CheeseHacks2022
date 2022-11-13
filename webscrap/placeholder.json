@@ -12,8 +12,16 @@
             },
             {
                 "courseSubject": "COMPSCI",
-                "courseCode": "271",
+                "courseCode": "234",
                 "courseName": "Some name",
+                "description": "Some description",
+                "requisites:": "COMPSCI 200 ...",
+                "credits": 3
+            },
+            {
+                "courseSubject": "MATH/STAT",
+                "courseCode": "271",
+                "courseName": "Some other name",
                 "description": "Some description",
                 "requisites:": "COMPSCI 200 ...",
                 "credits": 3
@@ -33,8 +41,92 @@
             },
             {
                 "courseSubject": "COMPSCI",
-                "courseCode": "271",
+                "courseCode": "234",
                 "courseName": "Some name",
+                "description": "Some description",
+                "requisites:": "COMPSCI 200 ...",
+                "credits": 3
+            }
+        ]
+    },
+    "Economics": {
+        "majorName": "Economics",
+        "courses": [
+            {
+                "courseSubject": "MATH 171",
+                "courseCode": "577",
+                "courseName": "Algebra 2.0",
+                "description": "Some description",
+                "requisites:": "COMPSCI 400 ...",
+                "credits": 3
+            },
+            {
+                "courseSubject": "ECON 310",
+                "courseCode": "271",
+                "courseName": "Some business name",
+                "description": "Some description",
+                "requisites:": "COMPSCI 200 ...",
+                "credits": 3
+            }
+        ]
+    },
+    "Statistics": {
+        "majorName": "Statistics",
+        "courses": [
+            {
+                "courseSubject": "MATH/STAT",
+                "courseCode": "271",
+                "courseName": "Some other name",
+                "description": "Some description",
+                "requisites:": "COMPSCI 400 ...",
+                "credits": 3
+            },
+            {
+                "courseSubject": "ECON",
+                "courseCode": "310",
+                "courseName": "Some business name",
+                "description": "Some description",
+                "requisites:": "COMPSCI 200 ...",
+                "credits": 3
+            }
+        ]
+    },
+    "Philosophy": {
+        "majorName": "Philosophy",
+        "courses": [
+            {
+                "courseSubject": "PHILOS",
+                "courseCode": "400",
+                "courseName": "Some other other other name",
+                "description": "Some description",
+                "requisites:": "COMPSCI 400 ...",
+                "credits": 3
+            },
+            {
+                "courseSubject": "ENGL",
+                "courseCode": "310",
+                "courseName": "Some other other name that is not repeated",
+                "description": "Some description",
+                "requisites:": "COMPSCI 200 ...",
+                "credits": 3
+            }
+        ]
+    },
+    "Biology": {
+        "majorName": "Biology",
+        "courses": [
+            {
+                "courseSubject": "BIO",
+                "courseCode": "310",
+                "courseName": "Some other bio name",
+                "description": "Some description",
+                "requisites:": "COMPSCI 400 ...",
+                "credits": 3
+            },
+            {
+                "courseSubject": "CHEM",
+                "courseCode": "100",
+                "courseName": "Some other other chem name",
                 "description": "Some description",
                 "requisites:": "COMPSCI 200 ...",
                 "credits": 3
