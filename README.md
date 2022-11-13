@@ -1,5 +1,5 @@
 # CheeseHacks2022
 
-For [CheeseHack](https://cheesehacks.webdevuw.org/) competition @ UW Wisconsin
+For [CheeseHacks 2022](https://cheesehacks.webdevuw.org/) competition @ UW Wisconsin - Madison
 
 Website link: https://cheese-hacks2022.vercel.app/
