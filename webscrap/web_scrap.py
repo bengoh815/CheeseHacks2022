@@ -4,6 +4,10 @@ import requests
 # This function gets all the major's names and linkes to their requirement page
 # Returns a dictionary with major_name, link pair 
 def get_majors_links(url):
+    '''
+    Function Header 
+    '''
+
     result = requests.get(url)
     doc = BeautifulSoup(result.text, "html.parser")
     #print(doc)
@@ -54,11 +58,45 @@ def get_courses(major, url):
     #print(stringOutput)
     with open('courseList.txt', 'a') as f:
         for x in table:
-            courseCode = x.find_all(["a"], class_="bubblelink code")
-            for y in courseCode:
+            even = x.find_all(["tr"], class_='even')
+            odd = x.find_all(["tr"], class_='odd')
+            courses = even + odd
+            for course in courses:
+                rows = course.find_all('td')
+                i = 0
+
+                course_number = "Not Found"
+                course_title = "Not Found"
+                for row in rows:
+                    text = row.text
+                    if text == "":
+                        continue
+                    if i == 0:
+                        course_number = row.text
+                    elif i == 1:
+                        course_title = row.text
+                    i += 1
+
+                if "Complete one of the sequences:" in course_number:
+                    continue 
+
+                try:
+                    value = int(course_title.replace("-", "")) 
+                    continue
+                except:
+                    pass
+
+                if "or" in course_number[0:2]:
+                    course_number = course_number.replace("or", "")
+
+                print(f"Course Number: {course_number} Course Title: {course_title}")
+
+                
+                # print(course.text)
                 # x = y.parent.next_sibling
-                f.write(y.string)
-                f.write("\n")
+                #f.write(y.string)
+                #f.write("\n")
+                #print(y.string)
                         #print(y.string.strip()) #TODO: put this output in a JSON file instead 
                         #f.write(y.string.strip())
                 
@@ -100,11 +138,11 @@ def main():
     keyList = major_link_pairs.keys()
     #print(major_link_pairs)
     
-    #get_courses("Computer Science", "https://guide.wisc.edu/undergraduate/letters-science/computer-sciences/computer-sciences-bs/index.html#requirementstext" )
+    get_courses("Computer Science", "https://guide.wisc.edu/undergraduate/letters-science/computer-sciences/computer-sciences-bs/index.html#requirementstext" )
 
-    for x in major_link_pairs:
-        finalLink = "https://guide.wisc.edu" + major_link_pairs[x] + "#requirementstext"
-        get_courses(x, finalLink)
+    #for x in major_link_pairs:
+        #finalLink = "https://guide.wisc.edu" + major_link_pairs[x] + "#requirementstext"
+        #get_courses(x, finalLink)
 
 
         #print(x, finalLink)
